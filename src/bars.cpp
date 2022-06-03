@@ -59,12 +59,13 @@ void Bars::read_txt(std::string archive){
         //tokenizar category, será passado depois para o block
         getline(arq,info_line); //leu uma linha até a virgula
         local_pair_info.second = info_line;
-        //passar informações que faltam para o block e armazenar o block no vector
-        block.bars_block[local_value]=local_pair_info;
-        bars_box.push_back(block);
+        //passar informações para o block 
+        block.bars_block.insert(std::pair<int, std::pair<std::string,std::string>>(local_value,local_pair_info));
         //lixeira
         tam++;
       }
+      //armazena o block no vector
+      bars_box.push_back(block);
       getline(arq,info_line);  //linha em branco
     }
     arq.close();
