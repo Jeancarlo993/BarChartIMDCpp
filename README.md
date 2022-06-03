@@ -2,13 +2,21 @@
 Projeto desenvolvido para a disciplina de Linguagem de Programação 1 na UFRN. 
 ## Classes  
 * Bars   
-Essa classe representa um dado que pode ter várias faces.
-Basseado na quantidade de faces, retorna um número aleatório
-de 1 até o numero de faces  
+Essa classe representa o conjunto de dados extraidos de um arquivo
+	* estrutura
+		* struct One_block -> representa um chart inteiro
+			* int number_of_bars -> número de barras no chart
+			* string year -> o registrado de cada chart
+			* multimap<int,pair<string,string>> -> multimpa ordenado de maneira decrescente com os valores rótulos e categorias de cada chart
+			* int min_value -> valor mínimo do chart
+			* int max_value -> valor máximo do chart		
 	* Atributos 
-		* faces -> o numero sorteado por um dado será de 1 até faces  
+		* One_block bars_block
+		* string archive_name
+		* string title
+		* string unity_measurement
 	* Métodos  
-		* Construtor -> por padrão inicia um dado com 6 faces  
+		* construtor 
 
 * Barschart 
  Essa classe representa um jogador que pode ser máquina ou humano.
@@ -22,22 +30,16 @@ de 1 até o numero de faces
 
 
 ## O programa
-* Mostra o manual
-	* iniciar
-		* escolher o nome
-		* sortear quem começa
-			* se human começa
-				* oferece as opções
-					* se r, então rola faz uma jogada
-						* caso valor jogado mais o valor o total até então passe os 100 então game_over() 
-							* mostra o log final do jogo e indica o vencedor  
-					* se h, passa o turno
-					* se q, sai do jogo
-					* se m, mostra o manual
-					* se l, mostra o log 		 
-			* se machine começa
-				* faz 5 jogadas
-				* caso 1 em alguma delas, passa o turno
-				* caso valor jogado mais o valor o total até então passe os 100 então game_over() 
-					* mostra o log final do jogo e indica o vencedor 
-				* depois das 5 jogadas passa o turno	
+* welcome
+	* preparing to read input file
+	* processing data, please wait
+	* input file successfuly read
+	* we have x charts with y bars
+	* animation speed 
+	* title
+	* values is
+	* source
+	* number of categories
+	* press enter to begin the animation
+		* inicia a animação
+			* cada block (chart) é exibido por vez até o último
