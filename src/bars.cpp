@@ -28,6 +28,7 @@ void Bars::read_txt(std::string archive){
   //variável que vai indicar quantas linhas de informações foram lidas
   int tam=0;
   //abrindo o arquivo, lendo as informações e armazenando 
+  std::cout<<archive_name<<std::endl;
   if (arq.is_open()){
     std::cout<<"Arquivo encontrado"<<std::endl;
     //exibe as  três primeiras linhas
@@ -61,6 +62,10 @@ void Bars::read_txt(std::string archive){
         local_pair_info.second = info_line;
         //passar informações para o block 
         block.bars_block.insert(std::pair<int, std::pair<std::string,std::string>>(local_value,local_pair_info));
+        //maior valor
+        block.max_value = block.bars_block.begin()->first;  
+        //menor valor
+        block.min_value = block.bars_block.rbegin()->first;
         //lixeira
         tam++;
       }

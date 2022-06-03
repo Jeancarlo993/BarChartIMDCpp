@@ -26,9 +26,10 @@ struct One_block{
 class Bars{
 private:
   std::vector<One_block> bars_box;  //!comporta varios blocos de barras
-  std::string archive_name="../data/"; //!nome do arquivo, vai ser recebido no terminal
+  std::string archive_name="data/"; //!nome do arquivo, vai ser recebido no terminal
+  std::string title;
+  std::string unity;
 public:
   void welcome();
   void read_txt(std::string);
-  
 };
