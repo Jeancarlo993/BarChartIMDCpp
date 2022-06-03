@@ -18,7 +18,7 @@ struct One_block{
       pair como argumento. No nosso caso seria um pair<int, pair<string,string>>.
       também podemos inserir assim bars_block[valor] = pair.
   */
-  std::map<int,std::pair<std::string,std::string>,std::greater<int>> bars_block;
+  std::multimap<int,std::pair<std::string,std::string>,std::greater<int>> bars_block;
   int max_value;                       //!valor máximo do bloco
   int min_value;                       //!valor mínimo do bloco
 };    
