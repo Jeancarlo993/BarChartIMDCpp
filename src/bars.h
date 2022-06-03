@@ -29,7 +29,8 @@ private:
   std::string archive_name="data/"; //!nome do arquivo, vai ser recebido no terminal
   std::string title;
   std::string unity;
+  std::string source;
 public:
-  void welcome();
+
   void read_txt(std::string);
 };

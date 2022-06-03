@@ -3,17 +3,9 @@
 #include <string>
 #include "bars.h"
 
-///tela de abbertura do jogo
-void Bars::welcome(){
-  std::cout<<"=================================================="<<std::endl;
-  std::cout<<"      Welcome to the Bar Chart Race, v.01 "<<std::endl;
-  std::cout<<"              Coryright (C) 2022"<<std::endl;
-  std::cout<<"=================================================="<<std::endl;
-}
-
-
 ///ler arquivo
 void Bars::read_txt(std::string archive){
+  std::cout << ">>> preparing to read input file" << std::endl;
   //struct de um bloco de informações
   One_block block; 
   //variável para armazenar o valor localmente
@@ -30,12 +22,19 @@ void Bars::read_txt(std::string archive){
   //abrindo o arquivo, lendo as informações e armazenando 
   std::cout<<archive_name<<std::endl;
   if (arq.is_open()){
-    std::cout<<"Arquivo encontrado"<<std::endl;
-    //exibe as  três primeiras linhas
-    for(int i=0;i<4;i++){
-      getline(arq,info_line);
-      std::cout<<info_line<<std::endl;
-    }
+    std::cout << ">>> processing data, please wait" << std::endl;
+    //leitura das três primeiras linhas; 
+    //linha do titulo
+    getline(arq,info_line);
+    title = info_line;
+    //linha da unidade de medida
+    getline(arq,info_line);
+    unity = info_line;
+    //linha do source
+    getline(arq,info_line);
+    source = info_line;
+    //linha vazia
+    getline(arq,info_line);
     //faz a leitura até o fim do arquivo
     while(!arq.eof()){
       //bloco por bloco
@@ -74,7 +73,7 @@ void Bars::read_txt(std::string archive){
       getline(arq,info_line);  //linha em branco
     }
     arq.close();
-    std::cout << "\nLeitura concluida!\n";
+    std::cout << ">>> input file successfuly read" << std::endl;
   }else{std::cout<<"Arquivo não encontrado"<<std::endl;}
 };
 
