@@ -31,6 +31,8 @@ private:
   std::string unity;
   std::string source;
 public:
-
+  std::string get_title();
+  std::string get_source();
+  std::string get_unity();
   void read_txt(std::string);
 };

@@ -77,5 +77,6 @@ void Bars::read_txt(std::string archive){
   }else{std::cout<<"Arquivo não encontrado"<<std::endl;}
 };
 
-
-
+std::string Bars::get_source(){return source;};
+std::string Bars::get_title(){return title;};
+std::string Bars::get_unity(){return unity;};
